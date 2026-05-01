@@ -1,0 +1,20 @@
+opencti:
+  url: 'http://opencti:8080'
+  token: 'ChangeMe'          # Token for the user for this connector
+
+connector:
+  id: 'ChangeMe'
+  type: 'EXTERNAL_IMPORT'
+  name: 'ATM Automotive ISAC'
+  scope: 'attack-pattern,x-mitre-tactic,x-mitre-matrix,campaign,relationship'
+  log_level: 'info'
+  duration_period: 'P7D'
+  reset_state_on_start: false
+
+atm:
+  stix_url: '/app/data/latest_atm.json'
+  confidence_level: 75
+  mitre_kill_chain_name: 'mitre-attack'
+  atm_kill_chain_name: 'atm-automotive'
+  author_name: 'ATM Automotive ISAC Connector'
+  author_identity_class: 'system'

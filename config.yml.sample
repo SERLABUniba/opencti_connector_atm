@@ -16,5 +16,5 @@ atm:
   confidence_level: 75
   mitre_kill_chain_name: 'mitre-attack'
   atm_kill_chain_name: 'atm-automotive'
-  author_name: 'ATM Automotive ISAC Connector'
-  author_identity_class: 'system'
+  author_name: 'AUTO-ISAC (Automotive Information Sharing and Analysis Center)'
+  author_identity_class: 'organization'

@@ -56,15 +56,15 @@ class ATMConfig(BaseConfigModel):
         description="Kill chain name for ATM-specific tactics.",
         default="atm-automotive",
     )
-    #This field is for the author of the KB, so the user in OpenCTI
+    #This field is for the author of the KB
     author_name: str = Field(
         description="Name of the identity that will own imported objects.",
-        default="ATM Automotive ISAC Connector",
+        default="AUTO-ISAC (Automotive Information Sharing and Analysis Center)",
     )
     #This field is for the type of the author
     author_identity_class: str = Field(
         description="STIX identity class for the author.",
-        default="system",
+        default="organization",
     )
 
 

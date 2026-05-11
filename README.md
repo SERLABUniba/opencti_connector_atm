@@ -207,7 +207,6 @@ graph LR
         AttackPattern[Attack Pattern]
         Campaign[Campaign]
         InSet[Intrusion Set]
-        Tool[Tool]
         KillChain[Kill Chain Phase]
         Rel[Relationship]
     end

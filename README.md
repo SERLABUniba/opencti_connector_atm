@@ -229,7 +229,7 @@ graph LR
 
 ### Entity Mapping
 
-| MITRE Data Type      | OpenCTI Entity      | Spaceshield Specific Content & Description       |
+| MITRE Data Type      | OpenCTI Entity      | ATM Specific Content & Description       |
 |----------------------|---------------------|--------------------------------------------------|
 | attack-pattern       | Attack Pattern      | Tactics and techniques. It includes specific automotive-domain techniques (e.g. CAN Bus Injection, Key Fob Relay, Jailbreaking ECU).                           |
 | campaign             | Campaign            | Attack campaigns. It includes case studies of real-world exploits or security research (e.g., “Jailbreaking an electric vehicle”).                               |

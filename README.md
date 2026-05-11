@@ -183,54 +183,48 @@ The ATM_PHASE_TO_KILLCHAIN dictionary is composed by the following tuples:
 - "can_bus_attack":           "atm-automotive",
 - "ota_attack":               "atm-automotive",
 
+To preserve the extended inheritance logic inherent in the ATM framework, this study adopts the MITRE ATT&CK taxonomy for the pre-impact stages of the kill chain, subsequently pivoting to the ATM Automotive model for post-impact analysis.
 
 ### Data Flow
 
 ```mermaid
 graph LR
-    subgraph MITRE_GitHub [MITRE ATT&CK]
+    subgraph MITRE_Reference [MITRE ATT&CK Base]
         direction TB
         Enterprise[Enterprise ATT&CK]
-        CAPEC[CAPEC]
+        Mobile[Mobile ATT&CK]
     end
 
-    subgraph ESA_SpaceShield [ESA Space Shield]
+    subgraph AutoISAC_ATM [Auto-ISAC ATM]
         direction TB
-        SpaceMatrix[Space Systems Matrix]
-        SpaceTechniques[Space Specific TTPs]
-        SpaceMitigations[Space Mitigations]
+        ATMMatrix[Automotive Threat Matrix]
+        ATMTechniques[Automotive Specific TTPs]
+        ATMCampaigns[Security Research & Campaigns]
     end
 
-    subgraph OpenCTI_Entities [OpenCTI]
+    subgraph OpenCTI_Model [OpenCTI Data Model]
         direction LR
         AttackPattern[Attack Pattern]
-        IntrusionSet[Intrusion Set]
-        Malware[Malware]
-        Tool[Tool]
         Campaign[Campaign]
-        Course[Course of Action]
-        Vulnerability[Vulnerability]
+        InSet[Intrusion Set]
+        Tool[Tool]
+        KillChain[Kill Chain Phase]
+        Rel[Relationship]
     end
 
-    %% Heredity
-    Enterprise -.-> |"Extended by"| SpaceMatrix
-    
-    %% Mapping MITRE -> OpenCTI
-    Enterprise --> AttackPattern
-    Enterprise --> IntrusionSet
-    Enterprise --> Malware
-    Enterprise --> Tool
-    Enterprise --> Campaign
-    Enterprise --> Course
-    CAPEC --> AttackPattern
-    CAPEC --> Vulnerability
+    %% Inheritance
+    Enterprise -.-> |"Extended by"| ATMMatrix
+    Mobile -.-> |"TTPs Knowledge Base for Mobile/Vehicle"| ATMTechniques
 
-    %% Mapping Space Shield -> OpenCTI
-    SpaceMatrix --> AttackPattern
-    SpaceTechniques --> AttackPattern
-    SpaceMitigations --> Course
+    %% Mapping ATM -> OpenCTI
+    ATMMatrix --> KillChain
+    ATMTechniques --> AttackPattern
+    ATMCampaigns --> Campaign
     
-    
+    %% Relationship for the Model
+    AttackPattern --> Rel
+    Campaign --> Rel
+    Rel --> InSet
 
 ```
 

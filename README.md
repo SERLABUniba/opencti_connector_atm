@@ -231,30 +231,27 @@ graph LR
 
 | MITRE Data Type      | OpenCTI Entity      | Spaceshield Specific Content & Description       |
 |----------------------|---------------------|--------------------------------------------------|
-| attack-pattern       | Attack Pattern      | Tactics and techniques. It includes specific space-domain techniques such as “telemetry spoofing” and “link jamming.”                           |
-| intrusion-set        | Intrusion Set       | Threat actor groups                              |
-| malware              | Malware             | Malware families and samples                     |
-| tool                 | Tool                | Legitimate tools used by adversaries             |
-| campaign             | Campaign            | Attack campaigns                                 |
-| course-of-action     | Course of Action    | Mitigations and defensive measures. It include specific mitigations for the Ground and Space segments (e.g., on-board encryption).               |
-| x-mitre-tactic       | Kill Chain Phases                   | Converted to kill chain phases. It defines specific space-domain phases of the “Space Shield Kill Chain” (e.g., Space Segment Access).                   |
-| x-mitre-matrix       | Kill Chain                   | ATT&CK matrix metadata. It generates the dedicated “Space Systems Matrix” view.                           |
-| x-mitre-data-source  | Data Source                   | Data sources for detection. It includes specific space-domain log sources (e.g., satellite telemetry, ground station logs).                       |
-| x-mitre-data-component  | Data Component                   | Data components for detection. It incldes data subsets (e.g., CCSDS packets, system bus logs).                      |
-| external-reference  | External Reference                   | Direct links to the official Mitre Attack and ESA Space Shield documentation for each technique.                      |
+| attack-pattern       | Attack Pattern      | Tactics and techniques. It includes specific automotive-domain techniques (e.g. CAN Bus Injection, Key Fob Relay, Jailbreaking ECU).                           |
+| campaign             | Campaign            | Attack campaigns. It includes case studies of real-world exploits or security research (e.g., “Jailbreaking an electric vehicle”).                               |
+| course-of-action     | Course of Action    | Mitigations and defensive measures. It includes specific mitigations for the Ground and Space segments (e.g., on-board encryption).               |
+| x-mitre-tactic       | Kill Chain Phases                   | Converted to kill chain phases. It includes specific phases of an automotive attack (e.g., Vehicle Function Affect, Safety-Critical Access).                   |
+| x-mitre-matrix       | Kill Chain                   | ATT&CK matrix metadata. It generates the dedicated “Automotive Threat Matrix” view in the tactical panel.                           |                    |
+| external-reference  | External Reference                   | Direct links to the official Mitre Attack and to case studies useful to demonstration videos, USENIX papers, Black Hat presentations, and NVD/CVE advisories...                      |
 		
-### ATT&CK Matrices Imported
+### ATT&CK Matrices Required
 
 1. **Enterprise ATT&CK**: Windows, macOS, Linux, Cloud, Network, Containers
 2. **CAPEC**: Attack patterns with CWE/CVE relationships
-3. **Space Shield Kill Chain**: Space-domain specific kill chain phases
+
+### ATT&CK Matrices Imoported
+1. **ATM-Automotive**: Automotive-domain specific kill chain phases
 
 ### Processing Details
 
 - **Native STIX Import**: All data is in native STIX 2.1 format
-- **Relationships**: All MITRE relationships (uses, mitigates, subtechnique-of) are preserved. Specific relatioships for the “space” domain are added.
-- **Kill Chain**: ATT&CK tactics are mapped to kill chain phases. Specific kill chain phases for the “space” domain are added.
-- **External References**: MITRE IDs and documentation links are preserved. Specific external references are added for the "space" domain (by ESA).
+- **Relationships**: All MITRE relationships (uses, mitigates, subtechnique-of) are preserved. Specific relatioships for the “automotive” domain are added.
+- **Kill Chain**: ATT&CK tactics are mapped to kill chain phases. Specific kill chain phases for the “automotive” domain are added.
+- **External References**: MITRE IDs and documentation links are preserved. Specific external references are added for the "automotive" domain (by ISAC).
 
 ## Debugging
 
@@ -267,4 +264,4 @@ CONNECTOR_LOG_LEVEL=debug
 ## Additional information
 
 - **Large Dataset**: Initial import may take several minutes due to the size
-- **Reference**: [MITRE ATT&CK](https://attack.mitre.org/) | [CAPEC](https://capec.mitre.org/) | [SPACE-SHIELD](https://spaceshield.esa.int/)
+- **Reference**: [MITRE ATT&CK](https://attack.mitre.org/) | [CAPEC](https://capec.mitre.org/) | [ATM](https://atm.automotiveisac.com/)
